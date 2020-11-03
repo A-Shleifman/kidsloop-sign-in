@@ -14,4 +14,8 @@ module.exports = {
   },
   variants: {},
   plugins: [],
+  experimental: {
+    darkModeVariant: true,
+  },
+  dark: 'class',
 };

@@ -5,9 +5,7 @@ import Button from 'components/Button';
 import logo from 'features/SignIn/kidsloop_min_logo.svg';
 
 const Wrapper = styled.div`
-  min-width: 300px;
   width: 80%;
-  max-width: 400px;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
   ${tw`flex-grow flex flex-col justify-center rounded-large py-8 px-6 m-3`}
 `;
@@ -17,10 +15,10 @@ const Form = styled.form`
 `;
 
 const Input = tw.input`
-  w-full p-3 my-1 border rounded-large placeholder-gray-500 border-gray-500 focus:outline-none
+  w-full p-3 my-1 border rounded-large placeholder-gray-500 border-gray-500 focus:outline-none text-black
 `;
 
-const Link = tw.a`flex items-center text-sm text-navy hover:underline`;
+const Link = tw.a`flex items-center text-sm text-navy hover:underline dark:text-orange-400`;
 
 export default () => {
   const [loading, setLoading] = useState(false);
