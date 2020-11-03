@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  frontend:
+    build: .
+    container_name: kidsloop-sign-in
+    restart: always
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./:/app/
+      - /app/build
+      - /app/coverage
+      - /app/node_modules
+    expose:
+      - 3000
+    labels:
+      traefik.http.routers.kidsloop-sign-in.rule: Host(`${DOMAIN}`)
+      traefik.http.routers.kidsloop-sign-in.entrypoints: websecure
+      traefik.http.routers.kidsloop-sign-in.tls.certresolver: cfdnsresolver
+      traefik.http.routers.kidsloop-sign-in.tls.domains[0].main: ${DOMAIN}
+      traefik.http.routers.kidsloop-sign-in.tls.domains[0].sans: www.${DOMAIN}
+
+networks:
+  default:
+    external:
+      name: traefik
