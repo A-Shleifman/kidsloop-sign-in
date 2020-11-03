@@ -13,8 +13,6 @@ services:
       - /app/build
       - /app/coverage
       - /app/node_modules
-    expose:
-      - 3000
     labels:
       traefik.http.routers.kidsloop-sign-in.rule: Host(`${DOMAIN}`)
       traefik.http.routers.kidsloop-sign-in.entrypoints: websecure
