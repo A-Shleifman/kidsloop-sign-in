@@ -5,7 +5,6 @@ import Button from 'components/Button';
 import logo from 'features/SignIn/kidsloop_min_logo.svg';
 
 const Wrapper = styled.div`
-  width: 80%;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
   ${tw`flex-grow flex flex-col justify-center rounded-large py-8 px-6 m-3`}
 `;
